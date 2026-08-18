@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALDEA HORTUS | EL LUGAR IDEAL PARA VIVIR, VACACIONAR O INVERTIR</title>
+
+<meta property="og:title" content="ALDEA HORTUS | VIVE EN ARMONIA CON LA NATURALEZA">
+<meta property="og:description" content="Departamentos en Nuevo Nayarit con gran potencial de inversión">
+<meta property="og:image" content="principal.jpg">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+color:#fff;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.86)),
+url('principal.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+overflow-x:hidden;
+}
+
+header{
+padding:70px 20px;
+border:none;
+background:none;
+}
+
+.logo{
+width:190px;
+max-width:80%;
+margin-bottom:25px;
+}
+
+.music-btn{
+background:#d4af37;
+color:#000;
+border:none;
+padding:13px 28px;
+border-radius:30px;
+font-weight:700;
+cursor:pointer;
+margin:20px auto;
+display:inline-block;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:46px;
+color:#d4af37;
+
+text-shadow:
+0 4px 15px rgba(0,0,0,.8),
+0 0 35px rgba(0,0,0,.6);
+}
+
+.sub,
+.contacto-header{
+text-shadow:
+0 2px 10px rgba(0,0,0,.9);
+}
+
+.contacto-header{
+margin-top:18px;
+font-size:15px;
+color:#ddd;
+line-height:1.8;
+}
+
+.section{
+padding:75px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section h2{
+color:#d4af37;
+font-family:'Playfair Display',serif;
+font-size:38px;
+margin-bottom:35px;
+}
+
+.hero img{
+width:100%;
+max-width:1050px;
+height:auto;
+border-radius:22px;
+box-shadow:0 25px 70px rgba(0,0,0,.55);
+border:1px solid rgba(212,175,55,.25);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:24px;
+}
+
+.card{
+border:1px solid rgba(212,175,55,.28);
+padding:28px;
+border-radius:22px;
+background:rgba(10,10,10,.72);
+backdrop-filter:blur(8px);
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.65);
+}
+
+.card h3{
+color:#d4af37;
+font-size:21px;
+margin-bottom:12px;
+}
+
+.card p{
+color:#eee;
+line-height:1.7;
+font-size:16px;
+}
+
+.gallery,
+.info-images{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+align-items:stretch;
+}
+
+.gallery img,
+.info-images img,
+.plan-img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.28);
+box-shadow:0 18px 45px rgba(0,0,0,.45);
+cursor:pointer;
+transition:.3s;
+background:#000;
+}
+
+.info-images img{
+height:330px;
+object-fit:cover;
+}
+
+.gallery img:hover,
+.info-images img:hover,
+.plan-img:hover{
+transform:scale(1.025);
+border-color:rgba(212,175,55,.75);
+}
+
+.buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+.btn{
+background:#d4af37;
+color:#000;
+padding:16px 32px;
+border-radius:40px;
+text-decoration:none;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:250px;
+transition:.3s;
+box-shadow:0 12px 35px rgba(212,175,55,.20);
+}
+
+.btn:hover{
+background:#fff;
+transform:translateY(-4px);
+}
+
+footer{
+padding:50px 20px;
+border-top:1px solid rgba(212,175,55,.45);
+margin-top:70px;
+color:#ddd;
+background:rgba(0,0,0,.72);
+line-height:1.8;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.92);
+align-items:center;
+justify-content:center;
+padding:25px;
+}
+
+.modal img{
+max-width:95%;
+max-height:90%;
+border-radius:18px;
+box-shadow:0 25px 80px rgba(0,0,0,.8);
+}
+
+.cerrar{
+position:absolute;
+top:20px;
+right:35px;
+font-size:45px;
+color:#fff;
+cursor:pointer;
+font-weight:700;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:36px;
+}
+
+.section{
+padding:55px 18px;
+}
+
+.section h2{
+font-size:31px;
+}
+
+.gallery img,
+.info-images img,
+.plan-img{
+height:240px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+max-width:330px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" class="logo" alt="Logo">
+
+<br>
+
+<button class="music-btn" id="musicButton" onclick="activarMusica()">
+    🎵 Activar Música
+</button>
+
+<h1>Desarrollo en Preventa</h1>
+
+<p class="sub">Torrez & Maldonado Real Estate | Market Inmobiliario</p>
+
+<div class="contacto-header">
+RODRIGO MALDONADO | GESTOR<br>
+📧 ventas.rodrigomaldonado@gmail.com<br>
+📱 +52 322 134 0289 | +52 311 339 2436
+</div>
+
+<div class="contacto-header">
+DESDE $ 1,990,000
+</div>  
+
+</header>
+
+<section class="section hero">
+<img src="principal.jpg" alt="ALDEA HORTUS, MAS QUE UN LUGAR, UNA EXELENTE INVERSION" onclick="abrirModal(this.src)">
+</section>
+
+<section class="section">
+
+<h2>Características del Departamento</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Departamentos | Modelo Alcatraz</h3>
+<p>63 mt2 + 7 mt2 de terraza,2 recamaras, 2 baños, sala, comedor, cocina, area de servicio, flex, elevador,</p>
+</div>
+
+<div class="card">
+<h3>Casas de 2 Niveles dentro de Coto | Modelo Tulipan</h3>
+<p>149.46 mt2 Construidos, 4 Recamaras, 3 Baños, Sala, Comedor, Cocina, Terraza, Area de Servicio, Cochera 2 Autos</p>
+</div>
+
+<div class="card">
+<h3>Casa de 3 Niveles dentro de Coto | Modelo Tulipan PH</h3>
+<p>197.73 mt2 construidos, 5 Recamaras, 4 Baños, Cocina, Sala, Comedor, Terraza, Area de Servicio, ochera 2 Autos</p>
+</div>
+
+<div class="card">
+<h3>Casa 2 Niveles dentro de Coto | Modelo Bugambilia</h3>
+<p>87.28 mt2 construidos, 3 Recamaras, 3 Baños, Cocina, Sala, Comedor, Area de Servicio, Cochera 2 Autos</p>
+</div>
+
+<div class="card">
+<h3>Seguridad</h3>
+<p>La seguridad de tu familia es prioridad y está cuidada en cada detalle, Vigilancia 24/7, Acceso controlado conplumas automatizadas Cámaras de seguridad.</p>
+</div>
+
+<div class="card">
+<h3>AMENIDADES ESCLUSIVAS</h3>
+<p>En Aldea Hortus podrás disfrutar de amenidades pensadas para tu bienestar y la convivencia, todo dentro de un entorno seguro y armonioso.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Amenidades del Desarrollo</h2>
+
+<div class="info-images">
+
+<img src="amenidades1.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 1">
+<img src="amenidades2.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 2">
+<img src="amenidades3.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 3">
+<img src="amenidades4.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 4">
+<img src="amenidades5.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 5">
+<img src="amenidades6.jpg" onclick="abrirModal(this.src)" alt="Amenidad ALdea hortus 6">
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Galería</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 1">
+<img src="foto2.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 2">
+<img src="foto3.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 3">
+<img src="foto4.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 4">
+<img src="foto5.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 5">
+<img src="foto6.jpg" onclick="abrirModal(this.src)" alt="Galería ALdea hortus 6">
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Planos del Departamento</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Modelo Alcatraz</h3>
+<img src="plano1.jpg" class="plan-img" onclick="abrirModal(this.src)" alt="Plano Modelo Alcatraz">
+<p>1 recámara | 63 m² + 7 m²</p>
+</div>
+
+<div class="card">
+<h3>Modelo Tulipan</h3>
+<img src="plano2.jpg" class="plan-img" onclick="abrirModal(this.src)" alt="Plano Modelo B">
+<p>2 recámaras | 149.46 m²</p>
+</div>
+
+<div class="card">
+<h3>Modelo Tulipan PH</h3>
+<img src="plano3.jpg" class="plan-img" onclick="abrirModal(this.src)" alt="Plano Modelo C">
+<p>3 recámaras | 197.76 m²</p>
+</div>
+
+<div class="card">
+<h3>Modelo Bugambilia</h3>
+<img src="plano4.jpg" class="plan-img" onclick="abrirModal(this.src)" alt="Plano Modelo D">
+<p>3 recámaras | 87.28 m²</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Avance del Proyecto</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Listos para Entrega</h3>
+<p>y Escrituraacion</p>
+</div>
+
+<div class="card">
+<h3>A 10 Minutos del Mar</h3>
+<p>Playas de Nuevo Nayarit y Bucerias</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Más Información</h2>
+
+<div class="buttons">
+
+<a class="btn" href="./Brochure.pdf" target="_blank">
+📄 Ver Brochure
+</a>
+
+<a class="btn" href="informacion-zona.pdf" target="_blank">
+🌎 Información de la Zona
+</a>
+
+<a class="btn" href="https://maps.app.goo.gl/5g1rThFW9YrQAScr8" target="_blank">
+📍 Ver Ubicación
+</a>
+
+<a class="btn" href="https://wa.me/523221340289?text=Hola%20me%20quiero%20agendar%20sesion%20de%20proyeccion%20financiera%20sobre%20aldea%20en%20hortus" target="_blank">
+💬 Programar sesión
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+RODRIGO MALDONADO | GESTOR<br>
+Gestión y localización de propiedades comerciales y viviendas<br>
+ventas.rodrigomaldonado@gmail.com<br>
+WhatsApp: +52 322 134 0289 | +52 311 339 2436
+</p>
+
+</footer>
+
+<div class="modal" id="modal">
+<span class="cerrar" onclick="cerrarModal()">×</span>
+<img id="modalImg" src="">
+</div>
+
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function activarMusica(){
+
+    const audio = document.getElementById("musica");
+    const button = document.getElementById("musicButton");
+
+    if (audio.paused) {
+
+        audio.play()
+        .then(() => {
+            button.innerHTML = "⏸ Pausar Música";
+        })
+        .catch(error => {
+            console.error("No se pudo reproducir la música:", error);
+            alert("No se pudo reproducir la música. Verifica que el archivo musica.mp3 exista y esté en la carpeta correcta.");
+        });
+
+    } else {
+
+        audio.pause();
+        button.innerHTML = "🎵 Activar Música";
+
+    }
+}
+
+function abrirModal(src){
+document.getElementById("modal").style.display = "flex";
+document.getElementById("modalImg").src = src;
+}
+
+function cerrarModal(){
+document.getElementById("modal").style.display = "none";
+document.getElementById("modalImg").src = "";
+}
+
+document.getElementById("modal").addEventListener("click", function(e){
+if(e.target.id === "modal"){
+cerrarModal();
+}
+});
+
+</script>
+
+</body>
+</html>
